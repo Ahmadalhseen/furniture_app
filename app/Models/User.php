@@ -61,4 +61,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(favorite::class);
     }
+
+    public function user_token(): HasOne
+    {
+        return $this->hasOne(user_token::class);
+    }
 }
