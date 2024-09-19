@@ -22,4 +22,6 @@ Route::post('register', [AuthController::class,"register"]);
 Route::post('login', [AuthController::class,"login"]);
 Route::group(['middleware' => 'Auth'], function () {
     Route::get('getuser', [CrudController::class, 'get_user']);
+
 });
+Route::post('createproduct', [CrudController::class, 'Create_Product']);

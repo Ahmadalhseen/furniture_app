@@ -22,15 +22,23 @@ return new class extends Migration
             $table->string('material')->nullable(); // Material type
             $table->string('fabric')->nullable(); // Fabric type
 
+            // Separated columns for general dimensions
+            $table->integer('length')->nullable(); // Length in inches
+            $table->integer('depth')->nullable(); // Depth in inches
+            $table->integer('height')->nullable(); // Height in inches
+
+            // Additional attributes based on the image
+            $table->integer('seat_height')->nullable(); // e.g. 17"
+            $table->integer('arm_height')->nullable(); // e.g. 24"
+            $table->integer('seat_depth')->nullable(); // e.g. 22"
+            $table->integer('leg_height')->nullable(); // e.g. 7"
+
             $table->timestamps(); // created_at and updated_at
 
             // Foreign key constraints
             $table->foreign('cat_id')
                 ->references('id')->on('categorie') // Assuming table name is "categories"
                 ->onDelete('cascade'); // If a category is deleted, products in that category are deleted
-
-
-                
         });
     }
 
