@@ -25,3 +25,9 @@ Route::group(['middleware' => 'Auth'], function () {
 
 });
 Route::post('createproduct', [CrudController::class, 'Create_Product']);
+Route::get('getproduct', [CrudController::class, 'Get_All_Product']);
+Route::post('getproductdetille', [CrudController::class, 'Get_Product_Detille']);
+Route::get('getDiscountedProducts',[CrudController::class, 'getDiscountedProducts']);
+Route::get('Get_Categories',[CrudController::class,'Get_Categories']);
+Route::post('Add_To_Favorite', [CrudController::class, 'Add_To_Favorite']);
+Route::delete('deletefavorite', [CrudController::class, 'Delete_From_Favorite']);
