@@ -17,7 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->decimal('total_price', 8, 2);
             $table->timestamps();
-
+            $table->integer('quantity'); // Quantity of the product in the cart
             $table->foreign('p_id')->references('id')->on('product');
             $table->foreign('user_id')->references('id')->on('users');
         });

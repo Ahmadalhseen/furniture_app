@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class delivery_location extends Model
 {
+    protected $table="delivery_location";
     use HasFactory;
 
     public function user(): BelongsTo
