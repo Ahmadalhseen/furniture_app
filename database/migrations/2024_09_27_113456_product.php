@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('p_name'); // Product name
             $table->decimal('p_price', 8, 2); // Product price
             $table->string('main_image'); // Main product image
-            $table->unsignedBigInteger('cat_id'); // Foreign key for category
+            // $table->unsignedBigInteger('cat_id'); // Foreign key for category
             $table->text('description')->nullable(); // Description of the product
             $table->string('color')->nullable(); // Product color
             $table->string('material')->nullable(); // Material type
@@ -26,7 +26,7 @@ return new class extends Migration
             $table->integer('length')->nullable(); // Length in inches
             $table->integer('depth')->nullable(); // Depth in inches
             $table->integer('height')->nullable(); // Height in inches
-
+            $table->unsignedBigInteger('cat_id');
             // Additional attributes based on the image
             $table->integer('seat_height')->nullable(); // e.g. 17"
             $table->integer('arm_height')->nullable(); // e.g. 24"
@@ -35,7 +35,7 @@ return new class extends Migration
 
             $table->timestamps(); // created_at and updated_at
 
-            // Foreign key constraints
+
             $table->foreign('cat_id')
                 ->references('id')->on('categorie') // Assuming table name is "categories"
                 ->onDelete('cascade'); // If a category is deleted, products in that category are deleted
