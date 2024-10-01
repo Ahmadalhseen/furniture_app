@@ -22,8 +22,7 @@ Route::post('register', [AuthController::class,"register"]);
 Route::post('login', [AuthController::class,"login"]);
 Route::group(['middleware' => 'Auth'], function () {
     Route::get('getuser', [CrudController::class, 'get_user']);
-});
-Route::post('createproduct', [CrudController::class, 'Create_Product']);
+    Route::post('createproduct', [CrudController::class, 'Create_Product']);
 Route::get('getproduct', [CrudController::class, 'Get_All_Product']);
 Route::post('getproductdetille', [CrudController::class, 'Get_Product_Detille']);
 Route::get('getDiscountedProducts',[CrudController::class, 'getDiscountedProducts']);
@@ -42,3 +41,5 @@ Route::post('Add_Payment_Card',[CrudController::class, 'Add_Payment_Card'] );
 Route::post('calculateTotalPrice',[CrudController::class, 'calculateTotalPrice'] );
 Route::post('filterProducts',[CrudController::class, 'filterProducts'] );
 Route::post('Get_Payment_Data',[CrudController::class, 'Get_Payment_Data'] );
+
+});
