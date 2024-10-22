@@ -90,7 +90,6 @@ public function Search(Request $request){
        return response()->json(["messag"=>"there is no result"], 401);
     }
     }
-
 }
 public function filterProducts(Request $request)
 {
