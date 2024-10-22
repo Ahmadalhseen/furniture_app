@@ -21,7 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('register', [AuthController::class,"register"]);
 Route::post('login', [AuthController::class,"login"]);
 Route::group(['middleware' => 'Auth'], function () {
-    Route::get('getuser', [CrudController::class, 'get_user']);
+
     Route::post('createproduct', [CrudController::class, 'Create_Product']);
 Route::get('getproduct', [CrudController::class, 'Get_All_Product']);
 Route::post('getproductdetille', [CrudController::class, 'Get_Product_Detille']);
@@ -43,3 +43,4 @@ Route::post('filterProducts',[CrudController::class, 'filterProducts'] );
 Route::post('Get_Payment_Data',[CrudController::class, 'Get_Payment_Data'] );
 
 });
+ Route::get('getuser', [CrudController::class, 'get_user']);

@@ -11,7 +11,7 @@ use App\Models\delivery_location;
 class CrudController extends Controller
 {
        public function get_user(){
-        return User::all();
+        return response()->json(User::get(), 200);
        }
 /////////////////////////////////////////Product_crud///////////////////////////////////
 public function Create_Product(Request $request)
